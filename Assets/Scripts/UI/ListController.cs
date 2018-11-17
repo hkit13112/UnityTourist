@@ -31,7 +31,7 @@ public class ListController : MonoBehaviour
 
   int OnHeightItem(int index)
   {
-    return 100;
+    return 120;
   }
 
   IEnumerator _LoadFromDataSource()

@@ -6,7 +6,8 @@ using System.IO;
 [System.Serializable]
 public class Place
 {
-  public string Name, Addr, Catalog, ImgUrl;
+    public string Name, Addr, Description, Catalog, ImgUrl;
+    public float Lat, Lon;
 }
 
 [System.Serializable]

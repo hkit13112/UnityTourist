@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,8 +143,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000051756917}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 1.9999871, y: 0.0000002139337}
+  m_SizeDelta: {x: -2.0000134, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &274701063
 GameObject:
@@ -563,7 +563,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -623,7 +623,7 @@ Camera:
   m_GameObject: {fileID: 1457465676}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -662,7 +662,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1457465676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 639, y: 164, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -744,7 +744,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 693004378}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -824,7 +824,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 450.4, y: 0}
+  m_SizeDelta: {x: 300, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1722759387
 MonoBehaviour:
@@ -902,12 +902,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471a55ab755bf3643af0a2734a363530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1909665905654400, guid: 921d2eef49cba4397b0de264caf3babd, type: 2}
-  TopPadding: 10
-  BottomPadding: 10
-  LeftPadding: 10
-  RightPadding: 10
-  ItemSpacing: 2
+  Prefab: {fileID: 1387268839187778, guid: 921d2eef49cba4397b0de264caf3babd, type: 2}
+  TopPadding: 20
+  BottomPadding: 20
+  LeftPadding: 50
+  RightPadding: 50
+  ItemSpacing: 4
   TopPullLabel: Pull to refresh
   TopReleaseLabel: Release to load
   BottomPullLabel: Pull to refresh
@@ -1074,7 +1074,7 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789147051}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!114 &1789147055
 MonoBehaviour:
   m_ObjectHideFlags: 0
