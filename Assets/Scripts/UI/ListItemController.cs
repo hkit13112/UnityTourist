@@ -7,10 +7,12 @@ using UnityEngine.EventSystems;
 public class ListItemController : MonoBehaviour, IPointerClickHandler
 {
     public Image image;
-    public Text _Name, _Addr, _Descripton, _Catalog;
+    public Text _Name, _Addr, _Catalog;
+    public TextTruncExt _Description;
     public float _Lat, _Lon;
 
     private Place loadedPlace;
+    RectTransform area;
 
   void Start()
   {
@@ -22,7 +24,12 @@ public class ListItemController : MonoBehaviour, IPointerClickHandler
   {
         _Name.text = place.Name;
         _Addr.text = place.Addr;
-        _Descripton.text = place.Description;
+        /*  if (place.Description.Length > 80)
+              _Descripton.text = place.Description.Remove(80) + "...";
+          else
+              _Descripton.text = place.Description;*/
+        // _Destmp.text = place.Description;
+        _Description.text = place.Description;
         _Catalog.text = place.Catalog;       
 
         if (place.ImgUrl != null)
@@ -37,5 +44,5 @@ public class ListItemController : MonoBehaviour, IPointerClickHandler
   public void OnPointerClick(PointerEventData eventData)
   {
     Debug.Log("On Click" + this.loadedPlace.Name);
-  }
+  } 
 }
