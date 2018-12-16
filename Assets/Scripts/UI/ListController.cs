@@ -12,6 +12,8 @@ public class ListController : MonoBehaviour
   [SerializeField]
   private int Count = 100;
 
+  private PlacesCollection currentData;
+
   void Start()
   {
     Scroll.OnFill += OnFillItem;
@@ -23,7 +25,7 @@ public class ListController : MonoBehaviour
   void OnFillItem(int index, GameObject item)
   {
     ListItemController itemController = item.GetComponentInChildren<ListItemController>();
-    Place place = PlacementDataSource.GetPlaceByIndex(index);
+    Place place = currentData.Places[index];
 
     // Async load
     StartCoroutine(itemController.LoadItem(place));
@@ -40,8 +42,17 @@ public class ListController : MonoBehaviour
     yield return PlacementDataSource.WaitingDataReady();
 
     // Load data to list
-    PlacesCollection data = PlacementDataSource.GetPlacesCollection();
-    Scroll.InitData(data.Places.Length);
+    this.currentData = PlacementDataSource.GetPlacesCollection();
+    Scroll.InitData(currentData.Places.Length);
   }
 
+  public IEnumerator ApplyFilter(System.Func<Place, bool> filter)
+  {
+    // Waiting data load complete 
+    yield return PlacementDataSource.WaitingDataReady();
+
+    // Load data to list
+    this.currentData = PlacementDataSource.GetPlacesCollectionWithFilter(filter);
+    Scroll.ApplyDataTo(currentData.Places.Length, 0, InfiniteScroll.Direction.Bottom);
+  }
 }
