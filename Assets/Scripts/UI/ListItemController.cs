@@ -6,13 +6,14 @@ using UnityEngine.EventSystems;
 
 public class ListItemController : MonoBehaviour, IPointerClickHandler
 {
+    public int _ID;
     public Image image;
     public Text _Name, _Addr, _Catalog;
     public TextTruncExt _Description;
     public float _Lat, _Lon;
 
-    private Place loadedPlace;
-    RectTransform area;
+    public Place loadedPlace;
+    RectTransform area;   
 
   void Start()
   {
@@ -22,6 +23,7 @@ public class ListItemController : MonoBehaviour, IPointerClickHandler
 
   public IEnumerator LoadItem(Place place)
   {
+        _ID = place.ID;
         _Name.text = place.Name;
         _Addr.text = place.Addr;
         /*  if (place.Description.Length > 80)
@@ -43,6 +45,9 @@ public class ListItemController : MonoBehaviour, IPointerClickHandler
 
   public void OnPointerClick(PointerEventData eventData)
   {
-    Debug.Log("On Click" + this.loadedPlace.Name);
+        Debug.Log("On Click" + this.loadedPlace.Name);
+        Debug.Log("On Click" + this.loadedPlace.ID);
+        PagesControler.Instance.GoToDetailPage(this.loadedPlace);
+        
   } 
 }
