@@ -5,7 +5,7 @@ using System.IO;
 
 public static class PlacementDataSource
 {
-  static PlacesCollection data;
+  public static PlacesCollection data;
 
   private static IEnumerator _LoadDataFromFile()
   {
